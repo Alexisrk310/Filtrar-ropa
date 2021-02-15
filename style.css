@@ -27,4 +27,9 @@ h1{
 main, h1{
     text-align: center;
 }
-
+/* JS */
+.alerta{
+    font-size: 25px;
+    padding: 100px auto;
+    background-color: red;
+}

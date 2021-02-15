@@ -58,14 +58,24 @@ function filtrarM() {
 
 	console.log(resultado);
 	eliminaHTML(); //BORRA HTML
-	resultado.forEach((conjunto) => {
-		const { marca, precio, talla, color, tipo } = conjunto;
-		const lista = document.createElement('p');
-		lista.innerHTML = `
-     <b>Marca:</b> ${marca} - <b>Precio:</b> ${precio} - <b>Talla:</b> ${talla} - <b>Color:</b> - ${color} - <b>Tipo:</b> ${tipo} <hr class="hr">
-    `;
-		resultados.appendChild(lista);
-	});
+	function ResultadoHTML() {
+		resultado.forEach((conjunto) => {
+			const { marca, precio, talla, color, tipo } = conjunto;
+			const lista = document.createElement('p');
+			lista.innerHTML = `
+		 <b>Marca:</b> ${marca} - <b>Precio:</b> ${precio} - <b>Talla:</b> ${talla} - <b>Color:</b> - ${color} - <b>Tipo:</b> ${tipo} <hr class="hr">
+		`;
+			resultados.appendChild(lista);
+		});
+	}
+	if (resultado.length) {
+		ResultadoHTML();
+	} else {
+		const noResultados = document.createElement('p');
+		noResultados.classList.add('alerta');
+		noResultados.textContent = 'NO HAY RESULTADO';
+		resultados.appendChild(noResultados);
+	}
 }
 //MARCA
 function filtrarMarca(marcas) {

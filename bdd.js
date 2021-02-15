@@ -843,7 +843,7 @@ const ropa = [
 
 	{
 		marca: 'Lacoste',
-		color: 'verde',
+		color: 'Verde',
 		tipo: 'Sueter',
 		talla: 'M',
 		precio: 60000,
